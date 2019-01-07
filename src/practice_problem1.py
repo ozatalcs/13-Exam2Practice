@@ -140,7 +140,7 @@ class Box(object):
           :type additional_contents: str
         """
         # ---------------------------------------------------------------------
-        # TODO: 3. Implement and test this function.
+        # Done: 3. Implement and test this function.
         #     See the testing code (below) for more examples.
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -166,12 +166,10 @@ class Box(object):
         for k in range(len(additional_contents)):
             if self.volume - len(self.contents) > 0:
                 self.contents = self.contents + additional_contents[k]
-                print (self.contents)
-                print (self.volume)
             else:
                 s = s + additional_contents[k]
         return s
-    
+
     def double(self):
         """
         What comes in:
