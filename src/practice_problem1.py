@@ -42,8 +42,8 @@ def main():
 
     run_test_init()
     run_test_append_string()
-    # run_test_double()
-    # run_test_shrink()
+    run_test_double()
+    run_test_shrink()
     # run_test_double_then_shrink()
     # run_test_reset()
     # run_test_steal()
@@ -204,7 +204,7 @@ class Box(object):
           #                       contents that did NOT fit]
         """
         # ---------------------------------------------------------------------
-        # TODO: 4. Implement and test this function.
+        # Done: 4. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -216,6 +216,7 @@ class Box(object):
         # FOR FULL CREDIT, YOUR SOLUTION MUST BE NO MORE THAN
         #    ** TWO **   LINES OF CODE.
         #######################################################################
+        return self.append_string(self.contents)
 
     def shrink(self, new_volume):
         """
@@ -253,7 +254,7 @@ class Box(object):
           :type new_volume: int
         """
         # ---------------------------------------------------------------------
-        # TODO: 5. Implement and test this function.
+        # Done: 5. Implement and test this function.
         #     The testing code is already written for you (above).
         # ---------------------------------------------------------------------
         # ---------------------------------------------------------------------
@@ -264,6 +265,16 @@ class Box(object):
         # IMPORTANT: Write a solution to this problem in pseudo-code,
         # and THEN translate the pseudo-code to a solution.
         # ---------------------------------------------------------------------
+        q = ''
+        p = self.contents
+        self.volume = new_volume
+        if new_volume < len(self.contents):
+            for k in range(len(self.contents) - new_volume):
+                q = q + self.contents[new_volume + k]
+            self.contents = ''
+            for k in range(new_volume):
+                self.contents = self.contents + p[k]
+        return q
 
     def double_then_shrink(self, new_volume):
         """
