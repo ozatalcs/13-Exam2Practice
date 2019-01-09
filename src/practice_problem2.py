@@ -208,7 +208,7 @@ def practice_problem2b(sequence):
       :type sequence: [str]
     """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -217,7 +217,7 @@ def practice_problem2b(sequence):
     ###########################################################################
     s = ''
     for k in range(len(sequence)):
-        if len(sequence[k])>0:
+        if len(sequence[k]) > 0:
             first_letter = sequence[k][0]
             s = s + str(first_letter)
     return s
